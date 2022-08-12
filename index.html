@@ -7,13 +7,6 @@
             height: 50px;
             width: 150px;
             font-size: large;
-            background-image: url(pokedex.);
-        }
-        body{
-            background-image: url(bg.jpg);
-            background-size: cover;
-            text-align: center;
-            font-size: x-large;
         }
         
         table,td,tr {
@@ -21,6 +14,13 @@
             font-size: x-large;
             border: 1px solid black;
             margin: auto;
+        }
+
+        body {
+            /* background-image: url(bg.jpg); */
+            background-size: cover;
+            text-align: center;
+            font-size: x-large;
         }
     </style>
 </head>
@@ -49,13 +49,11 @@
             document.getElementById("type2").innerText="None";
     }
 </script>
-<div class="container">
+<div class="main">
     <h1> 
         Find Random Pokemon :=  <br>
     </h1>
     <button onclick="poke()"> Find </button>
-</div>
-
 <br><br><br>
 <h2>
     Pokemon Information :- 
@@ -64,10 +62,10 @@
     <tr>
         <td>
                 Name -> 
-            </td>
-            <td>
-                <p id="name"> Name </p>
-            </td>
+        </td>
+        <td>
+            <p id="name"> Name </p>
+        </td>
         </tr>
         <tr>
             <td>
@@ -87,7 +85,7 @@
         </tr>
         <tr>
             <td>
-                Ability 1
+                Ability 1 ->
             </td>
             <td>
                 <p id="ability1"> Ability 1 </p>
@@ -95,7 +93,7 @@
         </tr>
         <tr>
             <td>
-                Ability 2
+                Ability 2 ->
             </td>
             <td>
                 <p id="ability2"> Ability 2 </p>
@@ -103,7 +101,7 @@
         </tr>
         <tr>
             <td>
-                Ability 3
+                Ability 3 ->
             </td>
             <td>
                 <p id="ability3"> Ability 3 </p>
@@ -126,6 +124,6 @@
             </td>
         </tr>
     </table>
-
+</div>
 </body>
 </html>
