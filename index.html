@@ -1,0 +1,131 @@
+<html>
+<head> 
+    <title> Pokedex </title>
+    <link rel="icon" type="image/x-icon" href="pokedex.ico">
+    <style>
+        button {
+            height: 50px;
+            width: 150px;
+            font-size: large;
+            background-image: url(pokedex.);
+        }
+        body{
+            background-image: url(bg.jpg);
+            background-size: cover;
+            text-align: center;
+            font-size: x-large;
+        }
+        
+        table,td,tr {
+            text-align: center;
+            font-size: x-large;
+            border: 1px solid black;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function poke() {
+        var num = Math.ceil(Math.random() * 100);
+        var url = "https://pokeapi.co/api/v2/pokemon/";
+        var poke = url + num;
+        //alert(poke);
+        fetch(poke)
+        .then( response => response.json())
+        .then(data => {
+            console.log(data);
+            console.log();
+            document.getElementById("name").innerText=(data.forms[0].name);
+            document.getElementById("ability1").innerText=(data.abilities[0].ability.name);
+            document.getElementById("ability2").innerText=(data.abilities[1].ability.name);
+            document.getElementById("ability3").innerText=(data.abilities[2].ability.name);
+            document.getElementById("weight").innerText=(data.weight);
+            document.getElementById("height").innerText=(data.height);
+            document.getElementById("type").innerText=(data.types[0].type.name);
+            document.getElementById("type2").innerText=(data.types[1].type.name);
+            })
+            
+            document.getElementById("type2").innerText="None";
+    }
+</script>
+<div class="container">
+    <h1> 
+        Find Random Pokemon :=  <br>
+    </h1>
+    <button onclick="poke()"> Find </button>
+</div>
+
+<br><br><br>
+<h2>
+    Pokemon Information :- 
+</h2>
+<table>
+    <tr>
+        <td>
+                Name -> 
+            </td>
+            <td>
+                <p id="name"> Name </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Type 1 ->
+            </td>
+            <td>
+                <p id="type"> Type </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Type 2 ->
+            </td>
+            <td>
+                <p id="type2"> Type2 </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ability 1
+            </td>
+            <td>
+                <p id="ability1"> Ability 1 </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ability 2
+            </td>
+            <td>
+                <p id="ability2"> Ability 2 </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ability 3
+            </td>
+            <td>
+                <p id="ability3"> Ability 3 </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Height ->
+            </td>
+            <td>
+                <p id="height"> Height </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Weight -> 
+            </td>
+            <td>
+                <p id="weight"> Weight</p>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
