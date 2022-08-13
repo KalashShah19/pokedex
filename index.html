@@ -80,13 +80,15 @@
                 document.getElementById("pokename").value="";
             })
             .catch(error => {
-                if (error == "TypeError: Cannot read properties of undefined (reading 'type')") {
+                if (error == "TypeError: Cannot read properties of undefined (reading \'type\')") {
                     document.getElementById("pokename").value="";
                 }
-                else{
+                else {
                     document.getElementById("pokename").value="";
                     alert("Invalid Name!");
                 }
+                
+                // alert(error);
                 document.getElementById("type2").innerText="None";
                 document.getElementById("ability3").innerText="None";
         });
@@ -96,9 +98,9 @@
     <img src="pokedex.png" alt="POKEMON" width="400px">
     <form method="post">
         <label for="pokename"> <h2> Search Pokemon : </h2> </label>
-        <input type="text" name="pokename" id="pokename" >
+        <input type="text" name="pokename" id="pokename" required>
     </form>
-    <button onclick="search()"> Find </button>
+    <button onclick="search()" accesskey="Enter"> Find </button>
     <button onclick="poke()"> Random </button>
     <br><br><br>
     <h2>
@@ -110,7 +112,7 @@
                     Name -> 
             </td>
             <td>
-                <p id="name"> Name </p>
+                <p id="name"> </p>
             </td>
             </tr>
             <tr>
@@ -118,7 +120,7 @@
                     Type 1 ->
                 </td>
                 <td>
-                    <p id="type"> Type </p>
+                    <p id="type"> </p>
                 </td>
             </tr>
             <tr>
@@ -126,7 +128,7 @@
                     Type 2 ->
                 </td>
                 <td>
-                    <p id="type2"> Type2 </p>
+                    <p id="type2"> </p>
                 </td>
             </tr>
             <tr>
@@ -134,7 +136,7 @@
                     Ability 1 ->
                 </td>
                 <td>
-                    <p id="ability1"> Ability 1 </p>
+                    <p id="ability1"> </p>
                 </td>
             </tr>
             <tr>
@@ -142,7 +144,7 @@
                     Ability 2 ->
                 </td>
                 <td>
-                    <p id="ability2"> Ability 2 </p>
+                    <p id="ability2"> </p>
                 </td>
             </tr>
             <tr>
@@ -150,7 +152,7 @@
                     Ability 3 ->
                 </td>
                 <td>
-                    <p id="ability3"> Ability 3 </p>
+                    <p id="ability3"> </p>
                 </td>
             </tr>
             <tr>
@@ -158,7 +160,7 @@
                     Height ->
                 </td>
                 <td>
-                    <p id="height"> Height </p>
+                    <p id="height"> </p>
                 </td>
             </tr>
             <tr>
@@ -166,7 +168,7 @@
                     Weight -> 
                 </td>
                 <td>
-                    <p id="weight"> Weight</p>
+                    <p id="weight"> </p>
                 </td>
             </tr>
         </table>
